@@ -1,0 +1,388 @@
+[{
+  "_id": {
+    "$oid": "67b4903ede7e535dc6465c30"
+  },
+  "id": 0,
+  "name": "Mushroom Risotto",
+  "ingredients": [
+    "mushrooms",
+    "rice",
+    "onion",
+    "garlic",
+    "butter",
+    "vegetable stock"
+  ],
+  "description": "Rich and creamy with earthy flavors.",
+  "prepTime": "30 min",
+  "img": "/landingpage/Mushroom-Risotto.png",
+  "link": "https://www.youtube.com/watch?v=NKtR3KpS83w",
+  "rating": 4.5
+},
+{
+  "_id": {
+    "$oid": "67b490dfde7e535dc6465c31"
+  },
+  "id": 1,
+  "name": "Margherita Pizza",
+  "ingredients": [
+    "flour",
+    "yeast",
+    "tomato sauce",
+    "mozzarella",
+    "basil"
+  ],
+  "description": "Simple yet delicious. Perfect for any occasion.",
+  "prepTime": "15 min",
+  "img": "/landingpage/Margherita-Pizza.png",
+  "link": "https://www.youtube.com/watch?v=vcfNpDtVqOw",
+  "rating": 4.8
+},
+{
+  "_id": {
+    "$oid": "67b4936cde7e535dc6465c32"
+  },
+  "id": 2,
+  "name": "Thai Green Curry",
+  "ingredients": [
+    "chicken",
+    "coconut milk",
+    "green curry paste",
+    "vegetables",
+    "rice"
+  ],
+  "description": "Spicy and aromatic. A classic Thai dish.",
+  "prepTime": "40 min",
+  "img": "/landingpage/Thai-Green-Curry.png",
+  "link": "https://www.youtube.com/watch?v=LIbKVpBQKJI",
+  "rating": 4.6
+},
+{
+  "_id": {
+    "$oid": "67b49388de7e535dc6465c33"
+  },
+  "id": 3,
+  "name": "Spaghetti Carbonara",
+  "ingredients": [
+    "spaghetti",
+    "bacon",
+    "eggs",
+    "parmesan",
+    "black pepper"
+  ],
+  "description": "A simple yet delicious pasta dish.",
+  "prepTime": "20 min",
+  "img": "/landingpage/Spaghetti-Carbonara.png",
+  "link": "https://www.youtube.com/watch?v=3AAdKl1UYZs",
+  "rating": 4.7
+},
+{
+  "_id": {
+    "$oid": "67b493b5de7e535dc6465c34"
+  },
+  "id": 4,
+  "name": "Cheesecake",
+  "ingredients": [
+    "biscuits",
+    "butter",
+    "cream cheese",
+    "sugar",
+    "eggs"
+  ],
+  "description": "Creamy and indulgent with a fruity twist.",
+  "prepTime": "1 hr",
+  "img": "/landingpage/Cheesecake.png",
+  "link": "https://www.youtube.com/watch?v=Ov4u0ARMWKQ",
+  "rating": 4.9
+},
+{
+  "_id": {
+    "$oid": "67b493b5de7e535dc6465c35"
+  },
+  "id": 5,
+  "name": "Veggie Stir Fry",
+  "ingredients": [
+    "tofu",
+    "soy sauce",
+    "vegetables",
+    "rice"
+  ],
+  "description": "Quick and healthy with a variety of veggies.",
+  "prepTime": "25 min",
+  "img": "/landingpage/Veggie-Stir-Fry.png",
+  "link": "https://www.youtube.com/watch?v=lNdFgQ4fBCI",
+  "rating": 4.4
+},
+{
+  "_id": {
+    "$oid": "67b493b5de7e535dc6465c36"
+  },
+  "id": 6,
+  "name": "Pho",
+  "ingredients": [
+    "beef",
+    "rice noodles",
+    "beef broth",
+    "spices",
+    "herbs"
+  ],
+  "description": "A comforting Vietnamese noodle soup.",
+  "prepTime": "2 hrs",
+  "img": "/landingpage/Pho.jpg",
+  "link": "https://www.youtube.com/watch?v=c9GfHgMk1ac",
+  "rating": 4.6
+},
+{
+  "_id": {
+    "$oid": "67b493b5de7e535dc6465c37"
+  },
+  "id": 7,
+  "name": "Pancakes",
+  "ingredients": [
+    "flour",
+    "milk",
+    "eggs",
+    "butter",
+    "sugar"
+  ],
+  "description": "Fluffy and delicious with your favorite toppings.",
+  "prepTime": "30 min",
+  "img": "/landingpage/Pancakes.jpg",
+  "link": "https://www.youtube.com/watch?v=NCMKedZvnyI",
+  "rating": 4.7
+},
+{
+  "_id": {
+    "$oid": "67b493b5de7e535dc6465c38"
+  },
+  "id": 8,
+  "name": "Chicken Tikka Masala",
+  "ingredients": [
+    "chicken",
+    "yogurt",
+    "tomato sauce",
+    "spices",
+    "rice"
+  ],
+  "description": "A rich and flavorful Indian curry dish.",
+  "prepTime": "1 hr",
+  "img": "/landingpage/Chicken-Tikka-Masala.jpg",
+  "link": "https://www.youtube.com/watch?v=lnRmIKkGCIA",
+  "rating": 4.8
+},
+{
+  "_id": {
+    "$oid": "67b493b5de7e535dc6465c39"
+  },
+  "id": 9,
+  "name": "Sushi Rolls",
+  "ingredients": [
+    "sushi rice",
+    "nori",
+    "fish",
+    "vegetables",
+    "soy sauce"
+  ],
+  "description": "Fresh and delicious with a variety of fillings.",
+  "prepTime": "1 hr",
+  "img": "/landingpage/Sushi-Rolls.jpg",
+  "link": "https://www.youtube.com/watch?v=nIoOv6lWYnk",
+  "rating": 4.9
+},
+{
+  "_id": {
+    "$oid": "67b493b5de7e535dc6465c3a"
+  },
+  "id": 10,
+  "name": "Tacos",
+  "ingredients": [
+    "tortillas",
+    "beef",
+    "lettuce",
+    "tomato",
+    "cheese",
+    "salsa"
+  ],
+  "description": "A classic Mexican dish that is easy to make and delicious.",
+  "prepTime": "30 min",
+  "img": "/landingpage/Tacos.jpg",
+  "link": "https://www.youtube.com/watch?v=vmuLzYet9K4",
+  "rating": 4.5
+},
+{
+  "_id": {
+    "$oid": "67b493b5de7e535dc6465c3b"
+  },
+  "id": 11,
+  "name": "Ratatouille",
+  "ingredients": [
+    "eggplant",
+    "zucchini",
+    "bell pepper",
+    "tomato",
+    "onion",
+    "garlic"
+  ],
+  "description": "A flavorful and colorful French vegetable stew.",
+  "prepTime": "1 hr",
+  "img": "/landingpage/Ratatouille.jpg",
+  "link": "https://www.youtube.com/watch?v=RQlp-p_Qcsw",
+  "rating": 4.6
+},
+{
+  "_id": {
+    "$oid": "67b493b5de7e535dc6465c3c"
+  },
+  "id": 12,
+  "name": "Beef Stroganoff",
+  "ingredients": [
+    "beef",
+    "mushrooms",
+    "onion",
+    "sour cream",
+    "paprika",
+    "noodles"
+  ],
+  "description": "A rich and creamy Russian dish that is hearty and delicious.",
+  "prepTime": "45 min",
+  "img": "/landingpage/Beef-Stroganoff.jpg",
+  "link": "https://www.youtube.com/watch?v=7r3dlmYUf4s",
+  "rating": 4.7
+},
+{
+  "_id": {
+    "$oid": "67b493b5de7e535dc6465c3d"
+  },
+  "id": 13,
+  "name": "Vegan Salad",
+  "ingredients": [
+    "quinoa",
+    "kale",
+    "avocado",
+    "tomato",
+    "cucumber",
+    "dressing"
+  ],
+  "description": "A refreshing vegan salad featuring fresh vegetables and a tangy lime dressing.",
+  "prepTime": "20 min",
+  "img": "/landingpage/Vegan-Salad.png",
+  "link": "https://www.youtube.com/watch?v=1Xer_ZxGFcQ",
+  "rating": 4.7
+},
+{
+  "_id": {
+    "$oid": "67b493b5de7e535dc6465c3e"
+  },
+  "id": 14,
+  "name": "Alfredo Pasta",
+  "ingredients": [
+    "fettuccine",
+    "cream",
+    "butter",
+    "parmesan",
+    "garlic",
+    "parsley"
+  ],
+  "description": "Indulge in creamy Alfredo pasta topped with fresh basil and parmesan cheese.",
+  "prepTime": "30 min",
+  "img": "/landingpage/Alfredo-Pasta.png",
+  "link": "https://www.youtube.com/watch?v=qda5mMOIlqc&t",
+  "rating": 4.9
+},
+{
+  "_id": {
+    "$oid": "67b493b5de7e535dc6465c3f"
+  },
+  "id": 15,
+  "name": "Fruit Parfait",
+  "ingredients": [
+    "yogurt",
+    "granola",
+    "berries",
+    "honey",
+    "nuts"
+  ],
+  "description": "Healthy fruit parfait layered with creamy yogurt and crunchy granola.",
+  "prepTime": "10 min",
+  "img": "/landingpage/Fruit-Parfait.png",
+  "link": "https://www.youtube.com/watch?v=8jwFwVHTgZc",
+  "rating": 4.5
+},
+{
+  "_id": {
+    "$oid": "67b493b5de7e535dc6465c40"
+  },
+  "id": 16,
+  "name": "Ramen Soup",
+  "ingredients": [
+    "ramen noodles",
+    "broth",
+    "egg",
+    "green onion",
+    "seaweed",
+    "pork"
+  ],
+  "description": "Warm up with a bowl of rich ramen soup enriched with egg and fresh veggies.",
+  "prepTime": "45 min",
+  "img": "/landingpage/Ramen-Soup.png",
+  "link": "https://www.youtube.com/watch?v=aafmrrx7Bh4",
+  "rating": 4.8
+},
+{
+  "_id": {
+    "$oid": "67b493b5de7e535dc6465c41"
+  },
+  "id": 17,
+  "name": "Pepperoni Pizza",
+  "ingredients": [
+    "dough",
+    "tomato sauce",
+    "mozzarella",
+    "pepperoni",
+    "oregano"
+  ],
+  "description": "Enjoy a classic pepperoni pizza with a crispy crust and gooey cheese.",
+  "prepTime": "20 min",
+  "img": "/landingpage/Pepperoni-Pizza.png",
+  "link": "https://www.youtube.com/watch?v=sv3TXMSv6Lw",
+  "rating": 4.7
+},
+{
+  "_id": {
+    "$oid": "67b493b5de7e535dc6465c42"
+  },
+  "id": 18,
+  "name": "Greek Salad",
+  "ingredients": [
+    "cucumber",
+    "tomato",
+    "feta",
+    "olives",
+    "onion",
+    "dressing"
+  ],
+  "description": "A delightful Greek salad with feta, olives, and a hint of oregano.",
+  "prepTime": "15 min",
+  "img": "/landingpage/Greek-Salad.png",
+  "link": "https://www.youtube.com/watch?v=kwq4vl610iY",
+  "rating": 4.6
+},
+{
+  "_id": {
+    "$oid": "67b493b5de7e535dc6465c43"
+  },
+  "id": 19,
+  "name": "Tomato Soup",
+  "ingredients": [
+    "tomato",
+    "onion",
+    "garlic",
+    "cream",
+    "basil",
+    "bread"
+  ],
+  "description": "Comforting homemade tomato soup infused with fresh basil.",
+  "prepTime": "30 min",
+  "img": "/landingpage/Tomato-Soup.png",
+  "link": "https://www.youtube.com/watch?v=szjZ3vqwyXE",
+  "rating": 4.9
+}]

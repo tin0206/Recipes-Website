@@ -3,13 +3,13 @@
         <h1 class="text-2xl font-bold dark:text-white">Popular Recipes</h1>
         <div class="recipe-cover">
             <ul class="recipe-list">
-                <li v-for="recipe in recipesList" :key="recipe.id" class="recipe">
+                <li v-for="recipe in recipesList.slice(0, 12)" :key="recipe.id" class="recipe">
                     <img :src="recipe.img" alt="Recipe Image" class="" />
                     <h4 class="font-bold dark:text-white">{{ recipe.name }}</h4>
                     <p class="dark:text-white">{{ recipe.description }}</p>
                     <p class="dark:text-white">Prep time: {{ recipe.prepTime }}</p>
                     <div class="view-recipe">
-                        <NuxtLink :to="'/RecipeDetails/' + recipe.id" class="text-blue-500"><span>View Recipe</span></NuxtLink>
+                        <a :href="recipe.link" target="_blank" rel="noopener noreferrer"><span>View Recipe</span></a>
                     </div>
                 </li>
             </ul>
@@ -19,8 +19,13 @@
 
 <script setup>
 
-const response = await $fetch('/api/recipes')
-const recipesList = ref(response.recipesList)
+const response = await $fetch('/api/recipes', {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json'
+    }
+})
+const recipesList = ref(response.recipes)
 
 </script>
 
@@ -30,6 +35,7 @@ const recipesList = ref(response.recipesList)
     flex-direction: column;
     align-items: center;
     width: 100%;
+    margin-top: 80px;
 }
 
 .recipe-cover {
@@ -110,11 +116,13 @@ const recipesList = ref(response.recipesList)
 
 @media only screen and (max-width: 480px) {
     .recipe-cover {
+
         padding: 10px;
     }
 
     .recipe {
         width: 100%;
+        margin-left: 0 !important;
     }
 }
 </style>

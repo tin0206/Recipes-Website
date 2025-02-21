@@ -15,7 +15,10 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ['@nuxt/ui'],
+  modules: [
+    '@nuxt/ui',
+    "@nuxtjs/cloudinary",
+  ],
   nitro: {
     plugins: ["~/server/index.ts"],
   },

@@ -11,20 +11,78 @@
                     </div>
                     <img :src="recipe.img" alt="Recipe Image" class="image" />
                 </a>
+                <button class="delete-btn" @click="checkDeleteRecipe(recipe._id)"><span class="dark:text-white">Delete</span></button>
             </li>
         </ul>
+    </div>
+    <div class="overlay" :class="{ hidden: !clickedRecipe }">
+        <div class="modal">
+            <div>Do you want to delete this recipe</div>
+            <div class="choices">
+                <button @click="beforeDeleteRecipe(recipe_id)">Yes</button>
+                <button @click="cancelDelete">No</button>
+            </div>
+        </div>
     </div>
 </template>
 
 <script setup>
 
-const response = await $fetch('/api/recipes', {
-    method: 'GET',
-    headers: {
-        'Content-Type': 'application/json'
-    }
+import recipes from '~/store/recipes/RecipesRepository'
+
+const recipesList = ref(recipes)
+const clickedRecipe = ref(false)
+const recipe_id = ref('')
+const hasBeenDeleted = ref(false)
+
+const { data: recipesData } = await useAsyncData('recipes', () => {
+    return $fetch('/api/recipes', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    }, {
+    watch: [hasBeenDeleted]
 })
-const recipesList = ref(response.recipes)
+
+watchEffect(() => {
+    recipesList.value = recipesData._rawValue.recipes
+})
+
+const checkDeleteRecipe = async (id) => {
+    clickedRecipe.value = true
+    recipe_id.value = id
+}
+
+const deleteRecipe = async (id) => {
+    const link = recipesList.value.find(recipe => recipe._id === id).link
+    try {
+        const response = await $fetch('/api/recipes', {
+            method: 'DELETE',
+            body: { id, link }
+        })
+        
+        console.log('Recipe deleted:', response)
+        recipesList.value = recipesList.value.filter(recipe => recipe._id !== id)
+    } catch (error) {
+        console.error('Error deleting recipe:', error)
+        alert('Failed to delete recipe. Please try again.')
+    }
+
+    hasBeenDeleted.value = true
+    setTimeout(() => {
+        clickedRecipe.value = false
+    }, 200)
+}
+
+const beforeDeleteRecipe = async (id) => {
+    await deleteRecipe(id)
+}
+
+const cancelDelete = () => {
+    clickedRecipe.value = false
+}
 
 </script>
 
@@ -49,7 +107,7 @@ h1 {
 
 .recipe {
     width: 345px;
-    height: 170px;
+    height: 200px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
     padding: 5px;
     background: white;
@@ -58,6 +116,29 @@ h1 {
 
     &:hover {
         transform: scale(1.05);
+    }
+}
+
+.delete-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 30px;
+    margin-top: 5px;
+    padding: 10px;
+    border: none;
+    border-radius: 0 0 10px 10px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+
+    &:hover {
+        background: #f0f0f0;
+    }
+
+    span {
+        color: #777;
+        font-size: 1rem;
     }
 }
 
@@ -92,6 +173,59 @@ h1 {
     height: 140px;
     object-fit: cover;
     border-radius: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+
+    .modal {
+        position: relative;
+        left: 40%;
+        top: 40%;
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
+        height: 200px;
+        background: white;
+        border-radius: 10px;
+        padding: 20px;
+    }
+
+    .choices {
+        display: flex;
+        flex-direction: row;
+    }
+
+    button {
+        width: 100px;
+        height: 30px;
+        margin-top: 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease-in-out;
+
+        &:hover {
+            background: #f0f0f0;
+        }
+    }
 }
 
 @media (max-width: 1024px) {

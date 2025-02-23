@@ -35,10 +35,12 @@ export default defineEventHandler(async (event) => {
     }
 
     try {
-        let imgUrl = "/recipecollection/Default.jpg"        
-
+        let imgUrl = "/recipecollection/Default.jpg"
+        
+        const sub_id = body.link.split("v=")[1]
+        
         if (body.img && body.img.startsWith('data:')) {
-            imgUrl = await uploadImageToCloudinary(body.img)
+            imgUrl = await uploadImageToCloudinary(body.img, sub_id)
         }
 
         const newRecipe = new Recipe({
@@ -49,7 +51,7 @@ export default defineEventHandler(async (event) => {
             img: imgUrl,
             link: body.link || "",
             rating: body.rating || 2.5,
-        })
+        })  
 
         await newRecipe.save();
 

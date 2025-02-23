@@ -21,13 +21,9 @@
 
 <script setup>
 
-const response = await $fetch('/api/comments', {
-    method: 'GET',
-    headers: {
-        'Content-Type': 'application/json'
-    }
-})
-const commentsList = ref(response.commentsList)
+import comments from '~/store/comments/CommentsRepository'
+
+const commentsList = ref(comments)
 
 </script>
 

@@ -8,9 +8,9 @@
         <input type="text" v-model="description" @change="checkDescription" placeholder="Description" class="input-field border px-5 py-1 m-1 border-black/40 rounded-md" />
         <input type="text" v-model="cookingTime" @change="checkCookingTime" placeholder="Preparation Time" class="input-field border px-5 py-1 m-1 border-black/40 rounded-md" />
         <div class="img">Image: 
-            <input type="file" @change="onFileSelected">
+            <input type="file" @change="onFileSelected" ref="fileInput">
         </div>
-        <input type="text" v-model="link" placeholder="Link" class="input-field border px-5 py-1 m-1 border-black/40 rounded-md" />
+        <input type="text" v-model="link" @change="checkLink" placeholder="Link" class="input-field border px-5 py-1 m-1 border-black/40 rounded-md" />
         <input type="text" v-model="rating" @change="checkRating" placeholder="Rating" class="input-field border px-5 py-1 m-1 border-black/40 rounded-md" />
         <div class="buttons flex">
             <button class="cancel" @click="cancelRecipe">Cancel</button>
@@ -22,16 +22,14 @@
 <script setup>
 
 import { ref } from 'vue'
+import recipes from '~/store/recipes/RecipesRepository'
 
 let recipesList = []
 
 async function fetchRecipes() {
-    try {
-        const response = await $fetch('/api/recipes')
-        response.recipes.forEach(recipe => {
-            recipesList.push(recipe)
-        })
-    } catch (error) {}
+    recipes.forEach(recipe => {
+        recipesList.push(recipe)
+    })
 }
 
 const name = ref('')
@@ -41,6 +39,7 @@ const cookingTime = ref('')
 const img = ref(null)
 const link = ref('')
 const rating = ref('')
+const fileInput = ref(null)
 
 await fetchRecipes()
 
@@ -86,6 +85,16 @@ const checkCookingTime = () => {
     cookingTime.value = `${time} ${unit}`
 }
 
+const checkLink = () => {
+    if (!link.value.startsWith('https://www.youtube.com/watch?v=') 
+    || !link.value.includes('youtube.com')
+    || !/[?&]v=[\w-]{11}/.test(link.value))
+    {
+        alert('Invalid link. Please enter a valid YouTube link.')
+        link.value = ''
+    }
+}
+
 const checkRating = () => {
     const numRating = parseFloat(rating.value)
     if (isNaN(numRating) || numRating < 0 || numRating > 5) {
@@ -110,9 +119,48 @@ const onFileSelected = (event) => {
     img.value = file
 }
 
+const check = () => {
+    if (name.value == undefined || name.value == '') {
+        alert('Please input the name')
+        name.value = ''
+        return false
+    }
+    if (ingredients.value == undefined || ingredients.value == '') {
+        alert('Please input the ingredients')
+        ingredients.value = ''
+        return false
+    }
+    if (description.value == undefined || description.value == '') {
+        alert('Please input the description')
+        description.value = ''
+        return false
+    }
+    if (cookingTime.value == undefined || cookingTime.value == '') {
+        alert('Please input the cooking time')
+        cookingTime.value = ''
+        return false
+    }
+    if (link.value == undefined || link.value == '') {
+        alert('Please input the link')
+        link.value = ''
+        return false
+    }
+    if (rating.value == undefined || rating.value == '') {
+        alert('Please input the rating')
+        rating.value = ''
+        return false
+    }
+    return true
+}
+
 const submitRecipe = async () => {
     try {
         
+        if (!check()) {
+            cancelRecipe()
+            return
+        }
+
         const ingredientsList = ingredients.value.split(',').map(ingredient => ingredient.trim())
 
         let base64Image = ''
@@ -156,6 +204,7 @@ const cancelRecipe = () => {
     img.value = null
     link.value = ''
     rating.value = ''
+    fileInput.value.value = ''
 }
 
 </script>

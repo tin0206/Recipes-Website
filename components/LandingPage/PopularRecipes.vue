@@ -19,13 +19,9 @@
 
 <script setup>
 
-const response = await $fetch('/api/recipes', {
-    method: 'GET',
-    headers: {
-        'Content-Type': 'application/json'
-    }
-})
-const recipesList = ref(response.recipes)
+import recipes from '~/store/recipes/RecipesRepository'
+
+const recipesList = ref(recipes)
 
 </script>
 

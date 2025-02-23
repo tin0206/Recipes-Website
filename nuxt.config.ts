@@ -24,5 +24,15 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     mongodbUri: process.env.MONGODB_URI,
-  }
+  },
+  vite: {
+    server: {
+      watch: {
+        usePolling: true,
+      },
+      hmr: {
+        overlay: false,
+      },
+    },
+  },
 })

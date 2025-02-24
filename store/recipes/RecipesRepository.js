@@ -5,7 +5,6 @@ const response = await $fetch('/api/recipes', {
     }
 })
 
-const recipes = response.recipes
-
+const recipes = response.recipes.sort((a, b) => a.name.localeCompare(b.name))
 
 export default recipes

@@ -27,9 +27,11 @@
 </template>
 
 <script setup>
+
 import { useRoute } from 'vue-router'
 const route = useRoute()
 const isActive = (path) => route.path === path
+
 </script>
 
 <style scoped lang="scss">
@@ -75,17 +77,10 @@ const isActive = (path) => route.path === path
     }
 }
 
-@media only screen and (max-width: 885px) {
-    h4 {
-        font-size: 15px;
-    }
-}
-
 @media only screen and (max-width: 821px) {
     .right {
         width: 500px !important;
         .nav {
-            gap: 5px;
             li {
                 font-size: 15px !important;
             }
@@ -107,6 +102,9 @@ const isActive = (path) => route.path === path
 
 @media only screen and (max-width: 630px) {
     .right {
+        h4 {
+            font-size: 20px !important;
+        }
         width: 200px !important;
         .nav {
             gap: 50px !important;
@@ -116,4 +114,20 @@ const isActive = (path) => route.path === path
         }
     }
 }
+
+@media only screen and (max-width: 529px) {
+    .right {
+        h4 {
+            font-size: 18px !important;
+        }
+        width: 200px !important;
+        .nav {
+            gap: 50px !important;
+            li {
+                font-size: 15px !important;
+            }
+        }
+    }
+}
+
 </style>

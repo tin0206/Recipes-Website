@@ -20,6 +20,7 @@
 <script setup>
 
 import recipes from '~/store/recipes/RecipesRepository'
+import { ref } from 'vue'
 
 const recipesList = ref(recipes)
 
@@ -72,7 +73,7 @@ const recipesList = ref(recipes)
     }
 
     p {
-        height: 30px;
+        height: 50px;
         font-size: 12px;
         margin-top: 5px;
     }

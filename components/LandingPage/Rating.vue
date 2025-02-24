@@ -22,6 +22,7 @@
 <script setup>
 
 import comments from '~/store/comments/CommentsRepository'
+import { ref } from 'vue'
 
 const commentsList = ref(comments)
 

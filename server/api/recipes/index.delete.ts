@@ -5,7 +5,6 @@ export default defineEventHandler(async (event) => {
     const body = await readBody(event)
     const id = body.id
     
-    
     if (!id) {
         throw createError({
             statusCode: 400,

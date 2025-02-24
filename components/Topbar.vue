@@ -63,8 +63,9 @@ const isActive = (path) => route.path === path
             margin-right: 30px;
         }
         .nav {
+            margin-left: 20px;
             display: flex;
-            gap: 25px;
+            gap: 50px;
             li {
                 display: flex;
                 align-items: center;
@@ -90,9 +91,39 @@ const isActive = (path) => route.path === path
     }
 }
 
-@media only screen and (max-width: 885px) {
+@media only screen and (max-width: 930px) {
+    .nav {
+        li {
+            font-size: 15px !important;
+        }
+        
+        gap: 30px !important;
+    }
+    .input-form {
+        width: 300px !important;
+    }
+}
+
+@media only screen and (max-width: 869px) {
     h4 {
-        font-size: 15px;
+        font-size: 14px !important;
+    }
+
+    .nav {
+        li {
+            font-size: 15px !important;
+        }
+    }
+
+    .input-form {
+        width: 250px !important;
+    }
+}
+
+
+@media only screen and (max-width: 830px) {
+    h4 {
+        font-size: 15px !important;
     }
 }
 
@@ -100,7 +131,6 @@ const isActive = (path) => route.path === path
     .left {
         width: 500px !important;
         .nav {
-            gap: 5px;
             li {
                 font-size: 15px !important;
             }
@@ -110,6 +140,18 @@ const isActive = (path) => route.path === path
         width: 300px !important;
         .input-form {
             width: 200px !important;
+        }
+    }
+}
+
+@media only screen and (max-width: 762px) {
+    .left {
+        width: 500px !important;
+        .nav {
+            gap: 20px !important;
+            li {
+                font-size: 13px !important;
+            }
         }
     }
 }
@@ -126,6 +168,24 @@ const isActive = (path) => route.path === path
     }
     .right {
         width: 200px !important;
+        .input-form {
+            width: 50px !important;
+        }
+    }
+}
+
+@media only screen and (max-width: 741px) {
+    .left {
+        width: 200px !important;
+        .nav {
+            gap: 5px;
+            li {
+                font-size: 15px !important;
+            }
+        }
+    }
+    .right {
+        width: 100px !important;
         .input-form {
             width: 50px !important;
         }

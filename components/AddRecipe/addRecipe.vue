@@ -48,6 +48,16 @@ const checkName = () => {
         alert('Recipe name should not exceed 30 characters.')
         name.value = ''
     }
+    const formatedName = name.value.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ')
+
+    recipesList.forEach(recipe => {
+        if (recipe.name == formatedName) {
+            alert('Recipe name already exists. Please choose a different name.')
+            name.value = ''
+            return
+        }
+    })
+    name.value = formatedName
     return
 }
 
@@ -93,6 +103,14 @@ const checkLink = () => {
         alert('Invalid link. Please enter a valid YouTube link.')
         link.value = ''
     }
+    recipesList.forEach(recipe => {
+        if (recipe.link == link.value) {
+            alert('Recipe link already exists. Please choose a different link.')
+            link.value = ''
+            return
+        }
+    })
+    return
 }
 
 const checkRating = () => {
@@ -172,6 +190,8 @@ const submitRecipe = async () => {
                 reader.readAsDataURL(img.value)
             })
         }
+
+        alert('Please wait for the recipe to be submitted.')
 
         const response = await $fetch('/api/recipes', {
             method: 'POST',

@@ -49,7 +49,7 @@ export default defineEventHandler(async (event) => {
             description: body.description,
             prepTime: body.prepTime || "1 hr",
             img: imgUrl,
-            link: body.link || "",
+            link: body.link,
             rating: body.rating || 2.5,
         })  
 

@@ -35,16 +35,18 @@ export default defineEventHandler(async (event) => {
     }
 
     try {
-        let imgUrl = "/recipecollection/Default.jpg"
-        
+        let imgUrl = "/landingpage/Default.jpg"
         const sub_id = body.link.split("v=")[1]
         
         if (body.img && body.img.startsWith('data:')) {
             imgUrl = await uploadImageToCloudinary(body.img, sub_id)
         }
 
+        const webName = body.name.split(" ").join("-")
+
         const newRecipe = new Recipe({
             name: body.name,
+            webName: webName,
             ingredients: body.ingredients,
             description: body.description,
             prepTime: body.prepTime || "1 hr",

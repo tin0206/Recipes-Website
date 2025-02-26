@@ -4,6 +4,9 @@ const RecipeSchema = new Schema({
     name: {
         type: String,
     },
+    webName: {
+        type: String,
+    },
     ingredients: {
         type: [String],
     },

@@ -37,15 +37,15 @@
         <h1 class="text-2xl font-bold dark:text-white">Recipe Collection</h1>
         <div class="recipe-collection">
             <ul class="recipe-list">
-                <li v-for="recipe in recipesList" :key="recipe.id" class="recipe">
-                    <a :href="recipe.link" target="_blank" rel="noopener noreferrer" class="item flex">
+                <li v-for="recipe in recipesList" :key="recipe._id" class="recipe">
+                    <NuxtLink :to="`/RecipeCollection/${recipe.webName}`" class="text-black dark:text-white choice item flex">
                         <div class="info">
                             <h4 class="font-bold dark:text-white">{{ recipe.name }}</h4>
                             <p class="dark:text-white">{{ recipe.description }}</p>
                             <div class="dark:text-white">Rating: {{ recipe.rating }}/5</div>
                         </div>
                         <img :src="recipe.img" alt="Recipe Image" class="image" />
-                    </a>
+                    </NuxtLink>
                     <button class="delete-btn" @click="checkDeleteRecipe(recipe._id)"><span class="dark:text-white">Delete</span></button>
                 </li>
             </ul>
@@ -90,6 +90,7 @@ const { data: recipesData } = await useAsyncData('recipes', () => {
 
 watchEffect(() => {
     recipesList.value = recipesData._rawValue.recipes
+    
     if (search.value == '') {
         recipesList.value = recipes
     }

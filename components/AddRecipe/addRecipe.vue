@@ -4,7 +4,7 @@
     </h1>
     <div class="input flex flex-col">
         <input type="text" v-model="name" @change="checkName" placeholder="Recipe Name" class="input-field border px-5 py-1 m-1 border-black/40 rounded-md" />
-        <input type="text" v-model="ingredients" placeholder="Ingredients" class="input-field border px-5 py-1 m-1 border-black/40 rounded-md" />
+        <input type="text" v-model="ingredients" @change="checkIngredients" placeholder="Ingredients" class="input-field border px-5 py-1 m-1 border-black/40 rounded-md" />
         <input type="text" v-model="description" @change="checkDescription" placeholder="Description" class="input-field border px-5 py-1 m-1 border-black/40 rounded-md" />
         <input type="text" v-model="cookingTime" @change="checkCookingTime" placeholder="Preparation Time" class="input-field border px-5 py-1 m-1 border-black/40 rounded-md" />
         <div class="img">Image: 
@@ -44,6 +44,8 @@ const fileInput = ref(null)
 await fetchRecipes()
 
 const checkName = () => {
+    name.value = name.value.trim()
+    name.value = name.value.replace(/\s+/g, ' ')
     if (name.value.length > 30) {
         alert('Recipe name should not exceed 30 characters.')
         name.value = ''
@@ -61,7 +63,16 @@ const checkName = () => {
     return
 }
 
+const checkIngredients = () => {
+    ingredients.value = ingredients.value.trim()
+    ingredients.value = ingredients.value.replace(/\s+/g, ' ')
+    ingredients.value = ingredients.value.split(',').map(ingredient => ingredient.trim()).join(', ')
+    return
+}
+
 const checkDescription = () => {
+    description.value = description.value.trim()
+    description.value = description.value.replace(/\s+/g, ' ')
     if (description.value.length > 100) {
         alert('Description should not exceed 100 characters.')
         description.value = ''
@@ -73,6 +84,8 @@ const checkDescription = () => {
 }
 
 const checkCookingTime = () => {
+    cookingTime.value = cookingTime.value.trim()
+    cookingTime.value = cookingTime.value.replace(/\s+/g, ' ')
     const timeString = cookingTime.value.split(' ')
     if (timeString.length != 2) {
         alert('Invalid time format. Please enter time in the format "[number] [unit]".')
@@ -96,6 +109,7 @@ const checkCookingTime = () => {
 }
 
 const checkLink = () => {
+    link.value = link.value.trim()
     if (!link.value.startsWith('https://www.youtube.com/watch?v=') 
     || !link.value.includes('youtube.com')
     || !/[?&]v=[\w-]{11}/.test(link.value))
@@ -114,6 +128,8 @@ const checkLink = () => {
 }
 
 const checkRating = () => {
+    rating.value = rating.value.trim()
+    rating.value = rating.value.replace(/\s+/g, ' ')
     const numRating = parseFloat(rating.value)
     if (isNaN(numRating) || numRating < 0 || numRating > 5) {
         alert('Rating should be between 0 and 5.')

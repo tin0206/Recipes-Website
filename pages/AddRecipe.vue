@@ -4,6 +4,6 @@
 
 <script setup>
 
-import addRecipe from '~/components/AddRecipe/addRecipe.vue';
+import addRecipe from '~/components/AddRecipe/addRecipe.vue'
 
 </script>

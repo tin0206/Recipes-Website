@@ -20,6 +20,15 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     "@nuxtjs/cloudinary",
   ],
+  components: {
+    dirs: [
+      '~/components',
+      {
+        path: 'node_modules/@nuxtjs/cloudinary/dist/runtime/components',
+        ignore: ['CldImage.vue'],
+      }
+    ]
+  },
   nitro: {
     plugins: ["~/server/index.ts"],
   },

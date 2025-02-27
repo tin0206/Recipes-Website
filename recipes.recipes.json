@@ -2,8 +2,8 @@
   "_id": {
     "$oid": "67b4903ede7e535dc6465c30"
   },
-  "id": 0,
   "name": "Mushroom Risotto",
+  "webName": "Mushroom-Risotto",
   "ingredients": [
     "mushrooms",
     "rice",
@@ -22,8 +22,8 @@
   "_id": {
     "$oid": "67b490dfde7e535dc6465c31"
   },
-  "id": 1,
   "name": "Margherita Pizza",
+  "webName": "Margherita-Pizza",
   "ingredients": [
     "flour",
     "yeast",
@@ -41,8 +41,8 @@
   "_id": {
     "$oid": "67b4936cde7e535dc6465c32"
   },
-  "id": 2,
   "name": "Thai Green Curry",
+  "webName": "Thai-Green-Curry",
   "ingredients": [
     "chicken",
     "coconut milk",
@@ -60,8 +60,8 @@
   "_id": {
     "$oid": "67b49388de7e535dc6465c33"
   },
-  "id": 3,
   "name": "Spaghetti Carbonara",
+  "webName": "Spaghetti-Carbonara",
   "ingredients": [
     "spaghetti",
     "bacon",
@@ -79,8 +79,8 @@
   "_id": {
     "$oid": "67b493b5de7e535dc6465c34"
   },
-  "id": 4,
   "name": "Cheesecake",
+  "webName": "Cheesecake",
   "ingredients": [
     "biscuits",
     "butter",
@@ -98,8 +98,8 @@
   "_id": {
     "$oid": "67b493b5de7e535dc6465c35"
   },
-  "id": 5,
   "name": "Veggie Stir Fry",
+  "webName": "Veggie-Stir-Fry",
   "ingredients": [
     "tofu",
     "soy sauce",
@@ -116,8 +116,8 @@
   "_id": {
     "$oid": "67b493b5de7e535dc6465c36"
   },
-  "id": 6,
   "name": "Pho",
+  "webName": "Pho",
   "ingredients": [
     "beef",
     "rice noodles",
@@ -135,8 +135,8 @@
   "_id": {
     "$oid": "67b493b5de7e535dc6465c37"
   },
-  "id": 7,
   "name": "Pancakes",
+  "webName": "Pancakes",
   "ingredients": [
     "flour",
     "milk",
@@ -154,8 +154,8 @@
   "_id": {
     "$oid": "67b493b5de7e535dc6465c38"
   },
-  "id": 8,
   "name": "Chicken Tikka Masala",
+  "webName": "Chicken-Tikka-Masala",
   "ingredients": [
     "chicken",
     "yogurt",
@@ -173,8 +173,8 @@
   "_id": {
     "$oid": "67b493b5de7e535dc6465c39"
   },
-  "id": 9,
   "name": "Sushi Rolls",
+  "webName": "Sushi-Rolls",
   "ingredients": [
     "sushi rice",
     "nori",
@@ -192,8 +192,8 @@
   "_id": {
     "$oid": "67b493b5de7e535dc6465c3a"
   },
-  "id": 10,
   "name": "Tacos",
+  "webName": "Tacos",
   "ingredients": [
     "tortillas",
     "beef",
@@ -212,8 +212,8 @@
   "_id": {
     "$oid": "67b493b5de7e535dc6465c3b"
   },
-  "id": 11,
   "name": "Ratatouille",
+  "webName": "Ratatouille",
   "ingredients": [
     "eggplant",
     "zucchini",
@@ -232,8 +232,8 @@
   "_id": {
     "$oid": "67b493b5de7e535dc6465c3c"
   },
-  "id": 12,
   "name": "Beef Stroganoff",
+  "webName": "Beef-Stroganoff",
   "ingredients": [
     "beef",
     "mushrooms",
@@ -252,8 +252,8 @@
   "_id": {
     "$oid": "67b493b5de7e535dc6465c3d"
   },
-  "id": 13,
   "name": "Vegan Salad",
+  "webName": "Vegan-Salad",
   "ingredients": [
     "quinoa",
     "kale",
@@ -272,8 +272,8 @@
   "_id": {
     "$oid": "67b493b5de7e535dc6465c3e"
   },
-  "id": 14,
   "name": "Alfredo Pasta",
+  "webName": "Alfredo-Pasta",
   "ingredients": [
     "fettuccine",
     "cream",
@@ -292,8 +292,8 @@
   "_id": {
     "$oid": "67b493b5de7e535dc6465c3f"
   },
-  "id": 15,
   "name": "Fruit Parfait",
+  "webName": "Fruit-Parfait",
   "ingredients": [
     "yogurt",
     "granola",
@@ -311,8 +311,8 @@
   "_id": {
     "$oid": "67b493b5de7e535dc6465c40"
   },
-  "id": 16,
   "name": "Ramen Soup",
+  "webName": "Ramen-Soup",
   "ingredients": [
     "ramen noodles",
     "broth",
@@ -331,8 +331,8 @@
   "_id": {
     "$oid": "67b493b5de7e535dc6465c41"
   },
-  "id": 17,
   "name": "Pepperoni Pizza",
+  "webName": "Pepperoni-Pizza",
   "ingredients": [
     "dough",
     "tomato sauce",
@@ -350,8 +350,8 @@
   "_id": {
     "$oid": "67b493b5de7e535dc6465c42"
   },
-  "id": 18,
   "name": "Greek Salad",
+  "webName": "Greek-Salad",
   "ingredients": [
     "cucumber",
     "tomato",
@@ -370,8 +370,8 @@
   "_id": {
     "$oid": "67b493b5de7e535dc6465c43"
   },
-  "id": 19,
   "name": "Tomato Soup",
+  "webName": "Tomato-Soup",
   "ingredients": [
     "tomato",
     "onion",

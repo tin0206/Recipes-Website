@@ -117,6 +117,7 @@ const checkLink = () => {
         alert('Invalid link. Please enter a valid YouTube link.')
         link.value = ''
     }
+    link = link.value.split('&')[0]
     recipesList.forEach(recipe => {
         if (recipe.link == link.value) {
             alert('Recipe link already exists. Please choose a different link.')

@@ -9,7 +9,7 @@
                     <p class="dark:text-white">{{ recipe.description }}</p>
                     <p class="dark:text-white">Prep time: {{ recipe.prepTime }}</p>
                     <div class="view-recipe">
-                        <NuxtLink :to="`/RecipeCollection/${recipe.webName}`" class="text-black dark:text-white choice"><span>View Recipe</span></NuxtLink>
+                        <NuxtLink :to="`/${recipe.webName}`" class="text-black dark:text-white choice"><span>View Recipe</span></NuxtLink>
                     </div>
                 </li>
             </ul>

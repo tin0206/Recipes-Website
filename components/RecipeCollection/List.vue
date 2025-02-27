@@ -38,7 +38,7 @@
         <div class="recipe-collection">
             <ul class="recipe-list">
                 <li v-for="recipe in recipesList" :key="recipe._id" class="recipe">
-                    <NuxtLink :to="`/RecipeCollection/${recipe.webName}`" class="text-black dark:text-white choice item flex">
+                    <NuxtLink :to="`/${recipe.webName}`" class="text-black dark:text-white choice item flex">
                         <div class="info">
                             <h4 class="font-bold dark:text-white">{{ recipe.name }}</h4>
                             <p class="dark:text-white">{{ recipe.description }}</p>

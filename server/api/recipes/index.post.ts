@@ -13,13 +13,13 @@ export default defineEventHandler(async (event) => {
     }
 
     if (body.img && body.img.startsWith('data:')) {
-        const allowedMimeTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp']
+        const allowedMimeTypes = ['image/jpeg', 'image/webp']
         const mimeType = body.img.match(/^data:(.*);base64/)[1]
     
         if (!allowedMimeTypes.includes(mimeType)) {
           throw createError({
             statusCode: 400,
-            statusMessage: "Invalid image type. Only JPEG, PNG, GIF, and WebP are allowed.",
+            statusMessage: "Invalid image type. Only JPEG and WebP are allowed.",
           })
         }
         const base64Data = body.img.split(',')[1]

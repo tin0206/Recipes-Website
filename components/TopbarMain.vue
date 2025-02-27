@@ -11,14 +11,14 @@
                     </NuxtLink>
                 </div>
                 <ul class="nav">
-                    <li :class="{ current: isActive('/') || isActive('/LandingPage') }">
-                        <NuxtLink to="/" class="text-black dark:text-white choice">Home</NuxtLink>
+                    <li :class="{ current: isActive('/') || isActive('/LandingPage') }" class="choice">
+                        <NuxtLink to="/" class="text-black dark:text-white">Home</NuxtLink>
                     </li>
-                    <li :class="{ current: isActive('/RecipeCollection') }">
-                        <NuxtLink to="/RecipeCollection" class="text-black dark:text-white choice">Recipes</NuxtLink>
+                    <li :class="{ current: isActive('/RecipeCollection') }" class="choice">
+                        <NuxtLink to="/RecipeCollection" class="text-black dark:text-white">Recipes</NuxtLink>
                     </li>
-                    <li :class="{ current: isActive('/AddRecipe') }">
-                        <NuxtLink to="/AddRecipe" class="text-black dark:text-white choice">Add Recipe</NuxtLink>
+                    <li :class="{ current: isActive('/AddRecipe') }" class="choice">
+                        <NuxtLink to="/AddRecipe" class="text-black dark:text-white">Add Recipe</NuxtLink>
                     </li>
                 </ul>
             </div>
@@ -67,6 +67,7 @@ const isActive = (path) => route.path === path
             width: 60%;
             display: flex;
             gap: 125px;
+
             li {
                 display: flex;
                 align-items: center;

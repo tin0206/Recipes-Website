@@ -19,9 +19,15 @@
 
 <script setup>
 
-import recipes from '~/store/recipes/RecipesRepository'
+import { getRecipes } from '~/store/recipes/RecipesRepository'
 import { ref } from 'vue'
 
+const recipes = ref([])
+const loadRecipes = async () => {
+    const temp_recipes = await getRecipes()
+    recipes.value = temp_recipes
+}
+loadRecipes()
 const recipesList = ref(recipes)
 
 </script>

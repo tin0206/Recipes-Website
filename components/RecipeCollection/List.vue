@@ -64,14 +64,12 @@
 
 <script setup>
 
-import recipes from '~/store/recipes/RecipesRepository'
 import { useRoute } from 'vue-router'
 import { ref, watchEffect } from 'vue'
 
 const route = useRoute()
 const isActive = (path) => route.path === path
-
-const recipesList = ref(recipes)
+const recipesList = ref([])
 const clickedRecipe = ref(false)
 const recipe_id = ref('')
 const hasBeenDeleted = ref(false)
@@ -89,14 +87,14 @@ const { data: recipesData } = await useAsyncData('recipes', () => {
 })
 
 watchEffect(() => {
-    recipesList.value = recipesData._rawValue.recipes
+    const baseRecipes = recipesData._rawValue.recipes || []
     
     if (search.value == '') {
-        recipesList.value = recipes
+        recipesList.value = baseRecipes
     }
     else {
         let tempSearch = search.value.toLowerCase()
-        recipesList.value = recipes.filter(recipe => recipe.name.toLowerCase().includes(tempSearch))
+        recipesList.value = baseRecipes.filter(recipe => recipe.name.toLowerCase().includes(tempSearch))
     }
 })
 

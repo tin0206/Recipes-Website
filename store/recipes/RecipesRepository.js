@@ -1,10 +1,13 @@
-const response = await $fetch('/api/recipes', {
-    method: 'GET',
-    headers: {
-        'Content-Type': 'application/json'
-    }
-})
+const fetchRecipes = async () => {
+    return await $fetch('/api/recipes', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+}
 
-const recipes = response.recipes
-
-export default recipes
+export const getRecipes = async () => {
+    const response = await fetchRecipes()
+    return response.recipes
+}

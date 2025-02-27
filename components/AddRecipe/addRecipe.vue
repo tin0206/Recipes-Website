@@ -22,15 +22,23 @@
 <script setup>
 
 import { ref } from 'vue'
-import recipes from '~/store/recipes/RecipesRepository'
 
 let recipesList = []
 
-async function fetchRecipes() {
-    recipes.forEach(recipe => {
-        recipesList.push(recipe)
+const { data: recipesData } = await useAsyncData('recipes', () => {
+    return $fetch('/api/recipes', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
     })
-}
+    }, {
+    watch: []
+})
+
+watchEffect(() => {
+    recipesList = recipesData._rawValue.recipes || []
+})
 
 const name = ref('')
 const ingredients = ref('')
@@ -40,8 +48,6 @@ const img = ref(null)
 const link = ref('')
 const rating = ref('')
 const fileInput = ref(null)
-
-await fetchRecipes()
 
 const checkName = () => {
     name.value = name.value.trim()
@@ -117,7 +123,7 @@ const checkLink = () => {
         alert('Invalid link. Please enter a valid YouTube link.')
         link.value = ''
     }
-    link = link.value.split('&')[0]
+    link.value = link.value.split('&')[0]
     recipesList.forEach(recipe => {
         if (recipe.link == link.value) {
             alert('Recipe link already exists. Please choose a different link.')
@@ -141,9 +147,9 @@ const checkRating = () => {
 
 const onFileSelected = (event) => {
     const file = event.target.files[0]
-    const allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp']
+    const allowedTypes = ['image/jpeg', 'image/webp']
     if (!allowedTypes.includes(file.type)) {
-        alert('Invalid file type. Only JPEG, PNG, GIF, and WebP are allowed.')
+        alert('Invalid file type. Only JPEG and WebP are allowed.')
         return
     }
     const maxSize = 5 * 1024 * 1024

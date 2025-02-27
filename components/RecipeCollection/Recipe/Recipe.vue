@@ -19,11 +19,26 @@
 <script setup>
 
 import { ref } from 'vue'
-import recipes from '~/store/recipes/RecipesRepository'
 
 const props = defineProps({
     name: String
 })
+
+let recipes = ref([])
+const { data: recipesData } = await useAsyncData('recipes', () => {
+    return $fetch('/api/recipes', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    }, {
+    watch: []
+})
+watchEffect(() => {
+    recipes = recipesData._rawValue.recipes || []
+})
+
 
 const name = ref(props.name)
 const recipe = recipes.find((recipe) => recipe.webName == name._value)

@@ -5,9 +5,9 @@
             <ul class="recipe-list">
                 <li v-for="recipe in recipesList.slice(0, 12)" :key="recipe.id" class="recipe">
                     <img :src="recipe.img" alt="Recipe Image" class="" />
-                    <h4 class="font-bold dark:text-white">{{ recipe.name }}</h4>
-                    <p class="dark:text-white">{{ recipe.description }}</p>
-                    <p class="dark:text-white">Prep time: {{ recipe.prepTime }}</p>
+                    <h4 class="font-bold">{{ recipe.name }}</h4>
+                    <p class="">{{ recipe.description }}</p>
+                    <p class="">Prep time: {{ recipe.prepTime }}</p>
                     <div class="view-recipe">
                         <NuxtLink :to="`/${recipe.webName}`" class="text-black dark:text-white choice"><span>View Recipe</span></NuxtLink>
                     </div>

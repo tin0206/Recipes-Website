@@ -3,12 +3,12 @@
         <div class="info">
             <h1 class="text-2xl font-bold dark:text-white">{{ recipe.name }}</h1>
             <img :src="recipe.img" alt="">
-            <p class="description">{{ recipe.description }}</p>
+            <p class="description dark:text-white">{{ recipe.description }}</p>
             <ul class="ingredients">
-                <li v-for="ingredient in recipe.ingredients">{{ ingredient }}</li>
+                <li class="dark:text-white" v-for="ingredient in recipe.ingredients">{{ ingredient }}</li>
             </ul>
-            <div class="prep-time">Preparing time: {{ recipe.prepTime }}</div>
-            <div class="rating">Rating: {{ recipe.rating }}</div>
+            <div class="prep-time dark:text-white">Preparing time: {{ recipe.prepTime }}</div>
+            <div class="rating dark:text-white">Rating: {{ recipe.rating }}</div>
         </div>
         <div class="vid">
             <iframe width="560" height="315" :src="url" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

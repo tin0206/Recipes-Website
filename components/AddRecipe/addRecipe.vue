@@ -3,15 +3,15 @@
        Share Your Recipe 
     </h1>
     <div class="input flex flex-col">
-        <input type="text" v-model="name" @change="checkName" placeholder="Recipe Name" class="input-field border px-5 py-1 m-1 border-black/40 rounded-md" />
-        <input type="text" v-model="ingredients" @change="checkIngredients" placeholder="Ingredients" class="input-field border px-5 py-1 m-1 border-black/40 rounded-md" />
-        <input type="text" v-model="description" @change="checkDescription" placeholder="Description" class="input-field border px-5 py-1 m-1 border-black/40 rounded-md" />
-        <input type="text" v-model="cookingTime" @change="checkCookingTime" placeholder="Preparation Time" class="input-field border px-5 py-1 m-1 border-black/40 rounded-md" />
+        <input type="text" v-model="name" @change="checkName" placeholder="Recipe Name" class="input-field border px-5 py-1 m-1 border-black/40 rounded-md dark:border-2 dark:border-white/40" />
+        <input type="text" v-model="ingredients" @change="checkIngredients" placeholder="Ingredients" class="input-field border px-5 py-1 m-1 border-black/40 rounded-md dark:border-2 dark:border-white/40" />
+        <input type="text" v-model="description" @change="checkDescription" placeholder="Description" class="input-field border px-5 py-1 m-1 border-black/40 rounded-md dark:border-2 dark:border-white/40" />
+        <input type="text" v-model="cookingTime" @change="checkCookingTime" placeholder="Preparation Time" class="input-field border px-5 py-1 m-1 border-black/40 rounded-md dark:border-2 dark:border-white/40" />
         <div class="img">Image: 
             <input type="file" @change="onFileSelected" ref="fileInput">
         </div>
-        <input type="text" v-model="link" @change="checkLink" placeholder="Link" class="input-field border px-5 py-1 m-1 border-black/40 rounded-md" />
-        <input type="text" v-model="rating" @change="checkRating" placeholder="Rating" class="input-field border px-5 py-1 m-1 border-black/40 rounded-md" />
+        <input type="text" v-model="link" @change="checkLink" placeholder="Link" class="input-field border px-5 py-1 m-1 border-black/40 rounded-md dark:border-2 dark:border-white/40" />
+        <input type="text" v-model="rating" @change="checkRating" placeholder="Rating" class="input-field border px-5 py-1 m-1 border-black/40 rounded-md dark:border-2 dark:border-white/40" />
         <div class="buttons flex">
             <button class="cancel" @click="cancelRecipe">Cancel</button>
             <button class="submit" @click="submitRecipe">Submit</button>

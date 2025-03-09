@@ -229,8 +229,8 @@ const submitRecipe = async () => {
             },
         })
 
-        console.log('Recipe submitted:', response);
-        alert('Recipe submitted successfully!');
+        console.log('Recipe submitted:', response)
+        alert('Recipe submitted successfully!')
         cancelRecipe()
 
     } catch (error) {

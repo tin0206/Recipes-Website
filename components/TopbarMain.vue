@@ -131,4 +131,19 @@ const isActive = (path) => route.path === path
     }
 }
 
+@media only screen and (max-width: 500px) {
+    .right {
+        h4 {
+            font-size: 13px !important;
+        }
+
+        .nav {
+            gap: 40px !important;
+            li {
+                font-size: 13px !important;
+            }
+        }
+    }
+}
+
 </style>

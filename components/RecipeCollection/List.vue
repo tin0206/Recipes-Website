@@ -40,9 +40,9 @@
                 <li v-for="recipe in recipesList" :key="recipe._id" class="recipe">
                     <NuxtLink :to="`/${recipe.webName}`" class="text-black dark:text-white choice item flex">
                         <div class="info">
-                            <h4 class="font-bold">{{ recipe.name }}</h4>
+                            <h4 class="font-bold dark:text-black dark:font-bold">{{ recipe.name }}</h4>
                             <p class="">{{ recipe.description }}</p>
-                            <div class="">Rating: {{ recipe.rating }}/5</div>
+                            <div class="dark:text-black">Rating: {{ recipe.rating }}/5</div>
                         </div>
                         <img :src="recipe.img" alt="Recipe Image" class="image" />
                     </NuxtLink>

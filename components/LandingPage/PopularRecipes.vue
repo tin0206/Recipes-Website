@@ -5,7 +5,7 @@
             <ul class="recipe-list">
                 <li v-for="recipe in recipesList.slice(0, 12)" :key="recipe.id" class="recipe">
                     <img :src="recipe.img" alt="Recipe Image" class="" />
-                    <h4 class="font-bold">{{ recipe.name }}</h4>
+                    <h4 class="font-bold dark:text-black dark:font-bold">{{ recipe.name }}</h4>
                     <p class="dark:text-black">{{ recipe.description }}</p>
                     <p class="dark:text-black">Prep time: {{ recipe.prepTime }}</p>
                     <div class="view-recipe">
